@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palace Cats | Cat Care, Cat Sitting & Cat Products in Crystal Palace</title>
+  <meta name="description" content="Palace Cats offers cat sitting, cat care support, cat products, toys and practical dietary guidance for cats in Crystal Palace and South London." />
+  <meta name="theme-color" content="#5a4a42" />
+  <style>
+    :root {
+      --bg: #f8f5f2;
+      --card: #ffffff;
+      --text: #2a2522;
+      --muted: #675e58;
+      --accent: #8b5e3c;
+      --accent-dark: #6d472d;
+      --soft: #efe7e0;
+      --border: #e3d8cf;
+      --shadow: 0 12px 30px rgba(42, 37, 34, 0.08);
+      --radius: 18px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #2f2723;
+      color: #fff8f3;
+      font-size: 0.95rem;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      flex-wrap: wrap;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 245, 242, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .button,
+    button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 0.9rem 1.25rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover,
+    button:hover {
+      background: var(--accent-dark);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent-dark);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .hero {
+      padding: 4.5rem 0 3rem;
+      background: linear-gradient(180deg, #f4ede7 0%, #f8f5f2 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      color: var(--accent-dark);
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.3rem);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cat-illustration {
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 30% 30%, #fff8f0 0 12%, transparent 13%),
+        radial-gradient(circle at 70% 30%, #fff8f0 0 12%, transparent 13%),
+        radial-gradient(circle at 50% 58%, #f5d5bd 0 35%, #d39a72 36% 60%, #8b5e3c 61% 100%);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .cat-illustration::before,
+    .cat-illustration::after {
+      content: "";
+      position: absolute;
+      top: 12%;
+      width: 22%;
+      height: 22%;
+      background: #8b5e3c;
+      border-radius: 12px 12px 4px 4px;
+      transform: rotate(45deg);
+    }
+
+    .cat-illustration::before { left: 18%; }
+    .cat-illustration::after { right: 18%; }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-head {
+      max-width: 70ch;
+      margin-bottom: 2rem;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .card .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--soft);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .list li { margin-bottom: 0.6rem; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .product {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .product-image {
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f3e8df, #ece2d9);
+      font-size: 3rem;
+    }
+
+    .product-body {
+      padding: 1rem;
+    }
+
+    .product-body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .price {
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin: 0.35rem 0 0.5rem;
+    }
+
+    .testimonial {
+      background: #2f2723;
+      color: #fff8f3;
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .testimonial p {
+      font-size: 1.1rem;
+      margin: 0 0 1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font: inherit;
+      background: white;
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.92rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .contact-grid,
+      .cards,
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero-grid,
+      .split,
+      .contact-grid,
+      .cards,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .topbar .container,
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div>Friendly local cat care in Crystal Palace & South London</div>
+      <div>Email: hello@palacecats.com</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">Palace <span>Cats</span></div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#advice">Dietary Advice</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="button">Book a Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Crystal Palace cat care</div>
+          <h1>Trusted cat sitting, thoughtful care, and hand-picked cat essentials.</h1>
+          <p>
+            Palace Cats is a local cat-focused service for owners in Crystal Palace and nearby South London areas. We offer calm, reliable cat sitting, practical support for everyday care, a small curated range of cat products and toys, and straightforward dietary guidance to help cats stay happy and comfortable at home.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Request cat sitting</a>
+            <a class="button secondary" href="#services">Explore services</a>
+          </div>
+          <div class="tag-row" aria-label="Key service tags">
+            <span class="tag">Local home visits</span>
+            <span class="tag">Cat sitting</span>
+            <span class="tag">Cat products</span>
+            <span class="tag">Feeding guidance</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="cat-illustration" aria-hidden="true"></div>
+          <div style="padding-top: 1rem;">
+            <h2 style="font-size:1.4rem; margin-bottom:0.5rem;">Why cat owners choose Palace Cats</h2>
+            <p style="margin:0; color:var(--muted);">
+              Gentle, cat-aware care with clear communication, flexible visits, and a focus on routines that reduce stress for both cats and owners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Everything on the front page is designed to make it immediately clear what Palace Cats offers and who it serves.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">🐾</div>
+            <h3>Cat sitting visits</h3>
+            <p>Daily home visits for feeding, water refresh, litter tray care, playtime, company, and welfare checks while you are away.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🏠</div>
+            <h3>Home routine support</h3>
+            <p>Help with maintaining your cat’s routine, reducing disruption, and keeping the home environment calm and familiar.</p>
+          </article>
+          <article class="card">
+            <div class="icon">💬</div>
+            <h3>Owner updates</h3>
+            <p>Clear updates after visits, including messages and photos, so you know how your cat is doing while you are away.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="card">
+          <h2>Local and cat-centred</h2>
+          <p>
+            Palace Cats is built around what cat owners usually want most: dependable care, a calm approach, and someone who understands that cats respond best to consistency and patience.
+          </p>
+          <ul class="list">
+            <li>Based around the Crystal Palace area in South London</li>
+            <li>Designed for cats that prefer staying in their own home</li>
+            <li>Ideal for holidays, weekends away, work trips, or busy periods</li>
+            <li>Suitable for single-cat and multi-cat households</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>What a visit can include</h2>
+          <ul class="list">
+            <li>Fresh food and water</li>
+            <li>Litter tray cleaning</li>
+            <li>Play, fuss, and enrichment</li>
+            <li>Medication reminders or simple routine support</li>
+            <li>Basic home security checks such as curtains, lights, or post collection</li>
+          </ul>
+          <p class="small">Adjust these details later to match exactly what you want to offer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured cat products</h2>
+          <p>You can later replace these sample items with affiliate links, your own product pages, or links to a Shopify or WooCommerce shop.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product">
+            <div class="product-image" aria-hidden="true">🧶</div>
+            <div class="product-body">
+              <h3>Interactive feather toy</h3>
+              <p class="price">From £8</p>
+              <p>Stimulating toy for active play sessions and short bursts of hunting-style enrichment.</p>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-image" aria-hidden="true">🛏️</div>
+            <div class="product-body">
+              <h3>Cosy cat bed</h3>
+              <p class="price">From £18</p>
+              <p>Soft, sheltered sleeping space designed for comfort and a sense of security.</p>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-image" aria-hidden="true">🍽️</div>
+            <div class="product-body">
+              <h3>Slow feeding bowl</h3>
+              <p class="price">From £12</p>
+              <p>Useful for cats that eat too quickly and benefit from slower, more controlled feeding.</p>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-image" aria-hidden="true">🐟</div>
+            <div class="product-body">
+              <h3>Natural treat selection</h3>
+              <p class="price">From £6</p>
+              <p>Simple, appealing reward treats for training, bonding, or occasional enrichment.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="advice">
+      <div class="container split">
+        <div class="card">
+          <h2>Dietary guidance</h2>
+          <p>
+            Palace Cats can share practical general guidance on feeding routines, hydration, treat moderation, and choosing foods that suit your cat’s age, appetite, and lifestyle.
+          </p>
+          <ul class="list">
+            <li>General feeding routine guidance</li>
+            <li>Dry food and wet food balance</li>
+            <li>Encouraging hydration</li>
+            <li>Weight management support</li>
+            <li>Treat use and portion awareness</li>
+          </ul>
+          <p class="small">For medical conditions, prescription diets, or illness-related concerns, owners should always consult their vet.</p>
+        </div>
+        <div class="testimonial">
+          <p>“A calm and friendly local service for cat owners who want more than just a quick feed and litter change.”</p>
+          <strong>Palace Cats, Crystal Palace</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-head">
+            <h2>Get in touch</h2>
+            <p>Use this section for enquiries about cat sitting, availability, products, or general care questions.</p>
+          </div>
+          <div class="card">
+            <p><strong>Email:</strong> hello@palacecats.com</p>
+            <p><strong>Area:</strong> Crystal Palace, South London</p>
+            <p><strong>Hours:</strong> By appointment</p>
+            <p class="small">
+              For GitHub Pages, this form is currently visual only. To make it send messages, connect it later to a form service such as Formspree, Basin, or Netlify Forms.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <form>
+            <div>
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" placeholder="Name" />
+            </div>
+            <div>
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" placeholder="Email" />
+            </div>
+            <div>
+              <label for="service">Interested in</label>
+              <select id="service" name="service">
+                <option>Cat sitting</option>
+                <option>Cat products</option>
+                <option>Dietary advice</option>
+                <option>General enquiry</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your cat and what you need"></textarea>
+            </div>
+            <button type="submit">Send enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Palace Cats</strong><br />
+        Cat care, cat sitting, products and feeding guidance in Crystal Palace.
+      </div>
+      <div>
+        © 2026 Palace Cats. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Palace Cats | Cat Sitting in Crystal Palace</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'><path d='M479.5 211.5c-4.4 2.8-11.8 11.5-16.5 19.3-15.6 26.2-24 55.4-23.7 82.2.2 13.9 3.2 27.2 9 39.8 4.3 9.4 6 15 6 19.4 0 7.8-5.3 14.5-14.7 18.6-26.6 11.6-43.5 35-50.5 69.5-2.7 13.5-3.3 35.8-1.1 48.7 5.1 29 20.3 58.7 41.5 81.3 15.3 16.3 40.5 35.7 60 46.2 15 8.1 32.5 15.6 44.5 18.8 33.7 9.3 75.3 10.1 110.5 2.2 46.7-10.4 89.2-38.3 115.5-75.9 14.8-21.1 25.1-46.7 29.5-73.6 1.8-11.3 1.8-31.5.1-43.2-3.6-24.7-12.8-49.1-26.1-69-14.2-21.2-31-38-51.5-51.5-20-13.1-43.8-22.3-68.5-26.6-13.8-2.4-17-3.4-17.5-5.5-.6-2.5 1.5-12.4 4.5-21.5 9-27.5 13-52.6 13-82.5 0-38.6-8.8-70.5-27-98.3-4-6.2-8.5-11.8-10-12.5-4.2-2-12.5 3.1-23.5 14.3-19.1 19.5-35 44.5-43 67.2-2.5 7-4.5 13.3-4.5 14 0 .7-4 1.3-8.8 1.3h-8.7l-5-12.5c-9.5-23.5-22.5-43-39.2-58.7-12.2-11.5-15.2-13.2-20-11.5z' fill='%231e1b4b'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'><path d='M50,80 L20,15 Q55,25 80,60' fill='%2371767c'/><path d='M170,80 L200,15 Q165,25 140,60' fill='%2371767c'/><path d='M50,90 Q50,45 110,45 Q170,45 170,90 Q170,170 110,195 Q50,170 50,90' fill='%2371767c'/><ellipse cx='85' cy='115' rx='16' ry='12' fill='%231a1a1a'/><ellipse cx='135' cy='115' rx='16' ry='12' fill='%2322c55e'/><path d='M95,182 Q110,190 125,182' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/><g stroke='white' stroke-width='1.5' stroke-linecap='round' opacity='0.8'><line x1='82' y1='100' x2='78' y2='55'/><line x1='92' y1='98' x2='88' y2='52'/><line x1='138' y1='100' x2='142' y2='55'/><line x1='128' y1='98' x2='132' y2='52'/></g><path d='M102,152 Q110,145 118,152 Q118,162 110,168 Q102,162 102,152' fill='%23111827'/></svg>">
   
   <meta name="description" content="Palace Cats offers cat sitting, home visits and practical cat care support in Crystal Palace and South London." />
   <meta name="theme-color" content="#111827" />
@@ -89,19 +89,36 @@
       letter-spacing: -0.02em;
     }
 
-    /* New Logo Container Styles */
-    .brand-logo-container {
+    .brand-mark {
       width: 42px;
       height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      position: relative;
+      box-shadow: var(--shadow);
       flex: 0 0 auto;
     }
 
-    .brand-logo-container svg {
-      width: 100%;
-      height: 100%;
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      width: 13px;
+      height: 13px;
+      background: var(--primary-2);
+      transform: rotate(45deg);
+      border-radius: 3px;
+    }
+
+    .brand-mark::before { left: 7px; }
+    .brand-mark::after { right: 7px; }
+
+    .brand-mark span {
+      position: absolute;
+      inset: 10px;
+      border-radius: 999px;
+      background: #eff6ff;
     }
 
     .brand b { color: var(--accent); }
@@ -235,12 +252,6 @@
       overflow: hidden;
       display: grid;
       place-items: center;
-    }
-
-    /* Scaling the logo for the Hero section */
-    .hero-visual svg {
-      width: 260px;
-      height: 260px;
     }
 
     section { padding: 4rem 0; }
@@ -403,11 +414,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="brand-logo-container">
-          <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-            <path d="M479.5 211.5c-4.4 2.8-11.8 11.5-16.5 19.3-15.6 26.2-24 55.4-23.7 82.2.2 13.9 3.2 27.2 9 39.8 4.3 9.4 6 15 6 19.4 0 7.8-5.3 14.5-14.7 18.6-26.6 11.6-43.5 35-50.5 69.5-2.7 13.5-3.3 35.8-1.1 48.7 5.1 29 20.3 58.7 41.5 81.3 15.3 16.3 40.5 35.7 60 46.2 15 8.1 32.5 15.6 44.5 18.8 33.7 9.3 75.3 10.1 110.5 2.2 46.7-10.4 89.2-38.3 115.5-75.9 14.8-21.1 25.1-46.7 29.5-73.6 1.8-11.3 1.8-31.5.1-43.2-3.6-24.7-12.8-49.1-26.1-69-14.2-21.2-31-38-51.5-51.5-20-13.1-43.8-22.3-68.5-26.6-13.8-2.4-17-3.4-17.5-5.5-.6-2.5 1.5-12.4 4.5-21.5 9-27.5 13-52.6 13-82.5 0-38.6-8.8-70.5-27-98.3-4-6.2-8.5-11.8-10-12.5-4.2-2-12.5 3.1-23.5 14.3-19.1 19.5-35 44.5-43 67.2-2.5 7-4.5 13.3-4.5 14 0 .7-4 1.3-8.8 1.3h-8.7l-5-12.5c-9.5-23.5-22.5-43-39.2-58.7-12.2-11.5-15.2-13.2-20-11.5z" fill="#1e1b4b"/>
-          </svg>
-        </div>
+        <div class="brand-mark"><span></span></div>
         <div>Palace <b>Cats</b></div>
       </div>
       <nav class="nav-links" aria-label="Main navigation">
@@ -442,8 +449,45 @@
         </div>
         <div class="hero-panel">
           <div class="hero-visual" aria-hidden="true">
-            <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                <path d="M479.5 211.5c-4.4 2.8-11.8 11.5-16.5 19.3-15.6 26.2-24 55.4-23.7 82.2.2 13.9 3.2 27.2 9 39.8 4.3 9.4 6 15 6 19.4 0 7.8-5.3 14.5-14.7 18.6-26.6 11.6-43.5 35-50.5 69.5-2.7 13.5-3.3 35.8-1.1 48.7 5.1 29 20.3 58.7 41.5 81.3 15.3 16.3 40.5 35.7 60 46.2 15 8.1 32.5 15.6 44.5 18.8 33.7 9.3 75.3 10.1 110.5 2.2 46.7-10.4 89.2-38.3 115.5-75.9 14.8-21.1 25.1-46.7 29.5-73.6 1.8-11.3 1.8-31.5.1-43.2-3.6-24.7-12.8-49.1-26.1-69-14.2-21.2-31-38-51.5-51.5-20-13.1-43.8-22.3-68.5-26.6-13.8-2.4-17-3.4-17.5-5.5-.6-2.5 1.5-12.4 4.5-21.5 9-27.5 13-52.6 13-82.5 0-38.6-8.8-70.5-27-98.3-4-6.2-8.5-11.8-10-12.5-4.2-2-12.5 3.1-23.5 14.3-19.1 19.5-35 44.5-43 67.2-2.5 7-4.5 13.3-4.5 14 0 .7-4 1.3-8.8 1.3h-8.7l-5-12.5c-9.5-23.5-22.5-43-39.2-58.7-12.2-11.5-15.2-13.2-20-11.5z" fill="white"/>
+            <svg width="320" height="320" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="catFur" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#71767c"/>
+                  <stop offset="100%" stop-color="#4a4e54"/>
+                </linearGradient>
+              </defs>
+
+              <path d="M50,80 L20,15 Q55,25 80,60" fill="url(#catFur)" stroke="#3f4348" stroke-width="2" />
+              <path d="M170,80 L200,15 Q165,25 140,60" fill="url(#catFur)" stroke="#3f4348" stroke-width="2" />
+              
+              <path d="M50,90 Q50,45 110,45 Q170,45 170,90 Q170,170 110,195 Q50,170 50,90" fill="url(#catFur)" stroke="#3f4348" stroke-width="2" />
+              
+              <path d="M95,182 Q110,190 125,182" fill="none" stroke="#f8fbff" stroke-width="4" stroke-linecap="round" />
+
+              <ellipse cx="85" cy="115" rx="16" ry="12" fill="#1a1a1a" />
+              <ellipse cx="85" cy="115" rx="3.5" ry="8" fill="#3a3e42" opacity="0.8" />
+              
+              <ellipse cx="135" cy="115" rx="16" ry="12" fill="#22c55e" />
+              <ellipse cx="135" cy="115" rx="4" ry="9" fill="#064e3b" />
+
+              <g stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+                <line x1="82" y1="100" x2="78" y2="55" />
+                <line x1="92" y1="98" x2="88" y2="52" />
+                <line x1="138" y1="100" x2="142" y2="55" />
+                <line x1="128" y1="98" x2="132" y2="52" />
+              </g>
+
+              <path d="M104,150 Q100,135 95,125" fill="none" stroke="#3a3e42" stroke-width="1.5" opacity="0.6"/>
+              <path d="M116,150 Q120,135 125,125" fill="none" stroke="#3a3e42" stroke-width="1.5" opacity="0.6"/>
+
+              <path d="M102,152 Q110,145 118,152 Q118,162 110,168 Q102,162 102,152" fill="#111827" />
+
+              <path d="M98,175 Q110,182 122,175" fill="none" stroke="#111827" stroke-width="1.2" stroke-linecap="round" />
+
+              <g stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+                <line x1="80" y1="165" x2="15" y2="168" /><line x1="80" y1="172" x2="20" y2="185" />
+                <line x1="140" y1="165" x2="205" y2="168" /><line x1="140" y1="172" x2="200" y2="185" />
+              </g>
             </svg>
           </div>
           <div style="padding-top: 1.1rem;">

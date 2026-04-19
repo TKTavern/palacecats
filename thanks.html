@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Palace Cats</title>
+  <meta name="description" content="Thank you for contacting Palace Cats." />
+  <meta name="theme-color" content="#111827" />
+  <style>
+    :root {
+      --bg: #eef4fb;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #1e1b4b;
+      --primary-2: #312e81;
+      --accent: #2563eb;
+      --border: #d7e3f4;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #dbeafe 0, transparent 35%),
+        linear-gradient(180deg, #f7fbff 0%, #eef4fb 100%);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--primary);
+      color: #dbeafe;
+      font-size: 0.92rem;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      flex-wrap: wrap;
+    }
+
+    header {
+      background: rgba(248, 251, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(215, 227, 244, 0.85);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo-container {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo-container img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .brand b { color: var(--accent); }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 4rem 0;
+    }
+
+    .thankyou-card {
+      width: min(100%, 760px);
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .thankyou-hero {
+      background: linear-gradient(160deg, #1e1b4b 0%, #2563eb 100%);
+      color: white;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .thankyou-hero img {
+      width: 120px;
+      height: 120px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    .thankyou-hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .thankyou-body {
+      padding: 2rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box p {
+      margin: 0.35rem 0;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      padding: 0.95rem 1.35rem;
+      font-weight: 800;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.8);
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .topbar .container,
+      .nav,
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .thankyou-hero,
+      .thankyou-body {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div>Local cat sitting in Crystal Palace and nearby South London</div>
+      <div>Email: <a href="mailto:hello@palacecats.com">hello@palacecats.com</a></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-logo-container">
+          <img src="palacecats-cat-header-mark.svg" alt="Palace Cats logo">
+        </div>
+        <div>Palace <b>Cats</b></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="thankyou-card">
+        <div class="thankyou-hero">
+          <img src="palacecats-cat-white.svg" alt="">
+          <h1>Thank you</h1>
+        </div>
+        <div class="thankyou-body">
+          <p class="lead">Your message has been sent to Palace Cats. We’ll get back to you by email as soon as we can.</p>
+
+          <div class="info-box">
+            <p><strong>What happens next:</strong></p>
+            <p>• We’ll review your enquiry</p>
+            <p>• We’ll reply by email</p>
+            <p>• We can then confirm availability and next steps</p>
+          </div>
+
+          <div class="actions">
+            <a class="button primary" href="index.html">Return to home</a>
+            <a class="button secondary" href="mailto:hello@palacecats.com">Email Palace Cats</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Palace Cats</strong><br />
+        Cat sitting and home visits in Crystal Palace.
+      </div>
+      <div>
+        © 2026 Palace Cats. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

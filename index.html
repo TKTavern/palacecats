@@ -582,31 +582,46 @@
           </div>
         </div>
         <div class="contact-card">
-          <form>
-            <div>
-              <label for="name">Your name</label>
-              <input id="name" name="name" type="text" placeholder="Name" />
-            </div>
-            <div>
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" placeholder="Email" />
-            </div>
-            <div>
-              <label for="service">Interested in</label>
-              <select id="service" name="service">
-                <option>Cat sitting</option>
-                <option>Cat products</option>
-                <option>Dietary advice</option>
-                <option>General enquiry</option>
-              </select>
-            </div>
-            <div>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us what you need"></textarea>
-            </div>
-            <button type="submit">Send enquiry</button>
-                      <p class="small">For GitHub Pages, this form is visual only. To make it send messages later, connect it to a form service such as Formspree.</p>
-          </form>
+		  <form action="https://formspree.io/f/xojyljoo" method="POST">
+
+		    <input type="hidden" name="_subject" value="New Palace Cats enquiry">
+		    <input type="hidden" name="_captcha" value="false">
+
+		    <div>
+		      <label for="name">Your name</label>
+		      <input id="name" name="name" type="text" placeholder="Name" required />
+		    </div>
+
+		    <div>
+		      <label for="email">Email address</label>
+		      <input id="email" name="email" type="email" placeholder="Email" required />
+		    </div>
+
+		    <div>
+		      <label for="service">Interested in</label>
+		      <select id="service" name="service">
+		        <option>Cat sitting</option>
+		        <option>Cat products</option>
+		        <option>Dietary advice</option>
+		        <option>General enquiry</option>
+		      </select>
+		    </div>
+
+		    <div>
+		      <label for="message">Message</label>
+		      <textarea id="message" name="message" placeholder="Tell us what you need" required></textarea>
+		    </div>
+
+		    <!-- simple spam trap -->
+		    <input type="text" name="_gotcha" style="display:none">
+
+		    <button type="submit">Send enquiry</button>
+
+		    <p class="small">
+		      We’ll reply by email. Your details are only used to respond to your enquiry.
+		    </p>
+<input type="hidden" name="_next" value="https://palacecats.com/thanks.html">
+		  </form>
         </div>
       </div>
     </section>
